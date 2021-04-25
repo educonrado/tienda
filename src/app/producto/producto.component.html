@@ -1,0 +1,11 @@
+<!--Directaiva, sirve para cambiar el DOM appHightlight. Usarlo con cuidado porque no se recomienda cambiar el dom-->
+<h3 appHightlight>{{ producto.title | uppercase }}</h3>
+<strong>{{ producto.price | currency}}</strong>
+<img [src]="producto.image" [alt]="producto.title">
+<p>
+    {{ producto.description | slice: 0:5 }}
+</p>
+<p>
+    {{ today | date: 'HH:mm' }}
+</p>
+<button (click)="addCart()">Agregar al carrito</button>
