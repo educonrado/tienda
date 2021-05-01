@@ -1,0 +1,41 @@
+{{ title }}
+<p>
+  <input type="text" [(ngModel)]="title">
+</p>
+
+<p>Pipe:
+  Base:<input type="text" [(ngModel)]="base">
+  Exponente:<input type="text" [(ngModel)]="expo">
+  {{ base | exponential: expo }}
+</p>
+
+<div *ngIf="title == 'nicolas'">
+  Prueba de nicolas
+</div>
+<div *ngIf="title == 'julian'">
+  Prueba de julian
+</div>
+<div *ngIf="title == 'edu'">
+  Prueba de edu
+</div>
+
+<div [ngSwitch]="title">
+  <div *ngSwitchCase="'julian'">
+    Caso julian
+  </div>
+  <div *ngSwitchCase="'nicolas'">
+    Caso nicolas
+  </div>
+  <div *ngSwitchCase="'edu'">
+    Caso edu
+  </div>
+  <button (click)="addItem()">Add</button>
+  <ul>
+    <li *ngIf="items.length === 0">Lista vacía.</li>
+    <li *ngFor="let item of items; index as i">
+      {{ item }} {{ i }} <button (click)="delete(i)">X</button></li>
+  </ul>
+
+  
+
+</div>
