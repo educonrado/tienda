@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { BannerComponent } from './components/banner/banner.component';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home/home.component';
-//Slide
 import { SwiperModule } from 'swiper/angular';
 
 @NgModule({
@@ -18,6 +17,4 @@ import { SwiperModule } from 'swiper/angular';
     ]
 })
 
-export class HomeModule {
-
-}
+export class HomeModule { }

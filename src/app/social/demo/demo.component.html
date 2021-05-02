@@ -6,7 +6,8 @@
 <p>Pipe:
   Base:<input type="text" [(ngModel)]="base">
   Exponente:<input type="text" [(ngModel)]="expo">
-  {{ base | exponential: expo }}
+  {{base | exponente : expo}}
+  <!--{{ base | exponente: expo }}-->
 </p>
 
 <div *ngIf="title == 'nicolas'">

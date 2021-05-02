@@ -9,7 +9,7 @@ import {
   Output,
   SimpleChanges
 } from '@angular/core';
-import { Product } from '../product.model';
+import { Product } from 'src/app/core/interfaces/product.model';
 
 @Component({
   selector: 'app-producto',

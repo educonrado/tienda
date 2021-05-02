@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  //AfterViewInit -> Decirme cuando los elementos hijos ya fueron renderizados
-  //AfterViewInit -> Decirme cuando los elementos hijos ya fueron renderizados
+  // AfterViewInit -> Decirme cuando los elementos hijos ya fueron renderizados
+  // AfterViewInit -> Decirme cuando los elementos hijos ya fueron renderizados
   constructor() { }
-  
 
   ngOnInit(): void {
   }

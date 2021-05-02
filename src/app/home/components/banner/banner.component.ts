@@ -19,11 +19,11 @@ export class BannerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSwiper(swiper: any){
+  onSwiper(swiper: any): any {
     console.log(swiper);
   }
 
-  onSlideChange() {
+  onSlideChange(): any {
     console.log('slide change');
   }
 }

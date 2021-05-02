@@ -12,14 +12,11 @@ export class DemoComponent implements OnInit {
   base = 1;
   expo = 2;
 
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
-  
   addItem(): void {
     this.items.push(this.title);
   }
@@ -27,6 +24,5 @@ export class DemoComponent implements OnInit {
   delete(index: number): void {
     this.items.splice(index, 1);
   }
-
 
 }

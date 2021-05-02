@@ -6,9 +6,9 @@ import { Directive, ElementRef } from '@angular/core';
 export class HightlightDirective {
 
   constructor(
-    private _element: ElementRef
+    private element: ElementRef
   ) {
-    _element.nativeElement.style.backgroundColor = '#068963';
+    element.nativeElement.style.backgroundColor = '#068963';
   }
 
 }
