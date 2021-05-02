@@ -9,3 +9,4 @@
     {{ today | date: 'HH:mm' }}
 </p>
 <button (click)="addCart()">Agregar al carrito</button>
+<a [routerLink]="[producto.id]">Ver detalles</a>
