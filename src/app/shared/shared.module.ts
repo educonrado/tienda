@@ -5,6 +5,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HightlightDirective } from './directives/hightlight/hightlight.directive';
 import { RouterModule } from '@angular/router';
 import { ExponentePipe } from './pipes/exponente.pipe';
+import { MaterialModule } from '../material/material.module';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ExponentePipe } from './pipes/exponente.pipe';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MaterialModule
   ]
 })
 export class SharedModule { }

@@ -1,21 +1,35 @@
 @import '~swiper/swiper-bundle';
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .product-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
 }
 
-@media (min-width: 576px) {
+@media (min-width: 600px) {
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .container {
+        max-width: 1118px;
+        padding-right: 16px;
+        padding-left: 16px;
+    }  
+}
+
+@media (min-width: 1080px) {
     .product-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
 }
 
-@media (min-width: 1080px) {
-    .product-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+//En móvil no hay área de respiro
+.container {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}   

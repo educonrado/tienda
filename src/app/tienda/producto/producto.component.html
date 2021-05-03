@@ -1,4 +1,22 @@
-<!--Directaiva, sirve para cambiar el DOM appHightlight. Usarlo con cuidado porque no se recomienda cambiar el dom-->
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>{{ producto.title | uppercase }}</mat-card-title>
+        <mat-card-subtitle>{{ producto.price | currency}}</mat-card-subtitle>
+    </mat-card-header>
+    <div class="crop-image">
+        <img mat-card-image [src]="producto.image" [alt]="producto.title">
+    </div>
+    <mat-card-content>
+        <p>
+            {{ producto.description | slice: 0:8 }}...
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a mat-raised-button color="accent" [routerLink]="[producto.id]">Ver detalles</a>
+        <button mat-raised-button color="primary" (click)="addCart()">Agregar al carrito</button>
+    </mat-card-actions>
+</mat-card>
+<!--Directaiva, sirve para cambiar el DOM appHightlight. Usarlo con cuidado porque no se recomienda cambiar el dom
 <h3 appHightlight>{{ producto.title | uppercase }}</h3>
 <strong>{{ producto.price | currency}}</strong>
 <img [src]="producto.image" [alt]="producto.title">
@@ -8,5 +26,5 @@
 <p>
     {{ today | date: 'HH:mm' }}
 </p>
-<button mat-raised-button color="primary" (click)="addCart()">Agregar al carrito</button>
-<a [routerLink]="[producto.id]">Ver detalles</a>
+
+-->

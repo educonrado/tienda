@@ -1,5 +1,5 @@
-<div class="product-grid">
-    <app-producto 
+<div class="product-grid margen-container">
+    <app-producto class="margen"
       *ngFor="let producto of productos" 
       (productClicked)="clickProduct($event)" 
       [producto]="producto">
