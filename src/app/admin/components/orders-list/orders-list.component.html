@@ -1,0 +1,26 @@
+<div class="contenedor-datos">
+    <h2>
+        Listado de ordenes
+    </h2>
+    <table mat-table [dataSource]="orders" class="mat-elevation-z8 products-table">
+        <!--Debe hacer match con los dientificadores del array displayedColumns-->
+        <ng-container matColumnDef="titulo">
+            <th mat-header-cell *matHeaderCellDef>Titulo</th>
+            <td mat-cell *matCellDef="let order"> {{order}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let order">
+                <button mat-icon-button aria-label="Edit order">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" aria-label="Delete order">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>

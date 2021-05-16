@@ -1,3 +1,35 @@
 <footer>
-    &copy; Todos los derechos reservados. Eduardo Conrado
+    <div class="docs-footer-list">
+        <div class="docs-footer-logo">
+            <img src="../../../../assets/images/logo.png">
+            <label>Tienda</label>
+        </div>
+        <div class="docs-footer-version">
+            <label>Redes sociales</label>
+            <div class="row">
+                <mat-icon class="icono" aria-hidden="false" aria-label="Facebook">facebook</mat-icon>
+                <label>Facebook</label>
+            </div>
+            <div class="row">
+                <mat-icon class="icono" aria-hidden="false" aria-label="sports esports">sports_esports</mat-icon>
+                <label>Instagram</label>
+            </div>
+            <div class="row">
+                <mat-icon class="icono" aria-hidden="false" aria-label="architecture">architecture</mat-icon>
+                <label>TikTok</label>
+            </div>
+            
+        </div>
+        <div class="docs-footer-copyright">
+            <label>Contactos</label>
+            <div class="row2">
+                <mat-form-field>
+                    <input matInput [formControl]="emailField" placeholder="Correo">
+                </mat-form-field>
+               <button mat-raised-button [disabled]="emailField.invalid" (click)="sendMail()">Enviar</button>
+               <label *ngIf="emailField.invalid">El campo ingresado no es válido</label>
+            </div>
+        </div>
+    </div>
+    
 </footer>

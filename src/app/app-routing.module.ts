@@ -26,12 +26,19 @@ const routes: Routes = [
         loadChildren: () => import('./tienda/tienda.module').then(m => m.TiendaModule)
       },
       {
+        path: 'login',
+        loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+      },
+      {
         path: '',
         canActivate: [AdminGuard],
         loadChildren: () => import('./social/social.module').then(m => m.SocialModule)
       },
-
     ]
+  },
+  {
+    path: 'admin',
+    loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
   },
   {
     path: '**',
