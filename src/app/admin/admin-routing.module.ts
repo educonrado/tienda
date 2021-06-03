@@ -14,6 +14,10 @@ const routes: Routes = [
     component: NavComponent,
     children: [
       {
+        path: 'products/edit/:id',
+        component: FormProductComponent
+      },
+      {
         path: 'products/create',
         component: FormProductComponent
       },
