@@ -1,51 +1,86 @@
 <form [formGroup]="form" (ngSubmit)="saveProduct($event)">
-    <mat-card class="shipping-card">
-        <mat-card-header>
-            <mat-card-title *ngIf="titulo">Nuevo producto</mat-card-title>
-            <mat-card-title *ngIf="!titulo">Editar producto</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <div class="row">
-                <div class="col">
-                    <mat-form-field class="full-width" *ngIf="titulo">
-                        <mat-label>Id</mat-label>
-                        <input formControlName="id" matInput type="text" placeholder="id">
-                    </mat-form-field>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <mat-form-field class="full-width">
-                        <mat-label>Title</mat-label>
-                        <input formControlName="title" matInput type="text" placeholder="title" />
-                    </mat-form-field>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <mat-form-field class="full-width">
-                        <mat-label>Price</mat-label>
-                        <input formControlName="price" matInput type="number" />
-                    </mat-form-field>
-                    <!-- Manejo de expeciones para presentar uno u otro mensaje de error siempre y cuando el usuario haya comenzsado a escribir (dirty) o tenga error (errors) -->
-                    <!-- También es posible remplazar (form.get('price')) por priceField creando en el ts el método get -->
-                    <div *ngIf="priceField?.errors && priceField?.dirty">
-                        <small *ngIf="priceField?.hasError('price_invalid')">Este campo no es válido</small>
-                        <small *ngIf="priceField?.hasError('required')">Campo requerido</small>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <mat-form-field class="full-width">
-                        <mat-label>Description</mat-label>
-                        <textarea formControlName="description" matInput placeholder="description"></textarea>
-                    </mat-form-field>
-                </div>
-            </div>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Submit</button>
-        </mat-card-actions>
-    </mat-card>
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title *ngIf="titulo">Nuevo producto</mat-card-title>
+      <mat-card-title *ngIf="!titulo">Editar producto</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width" *ngIf="titulo">
+            <mat-label>Id</mat-label>
+            <input formControlName="id" matInput type="text" placeholder="id" />
+            <mat-error *ngIf="form.controls['id'].hasError('required')">
+              Campo requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Title</mat-label>
+            <input
+              formControlName="title"
+              matInput
+              type="text"
+              placeholder="title"
+            />
+            <mat-error *ngIf="form.controls['title'].hasError('required')">
+              Campo requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Price</mat-label>
+            <input formControlName="price" matInput type="number" />
+            <mat-error *ngIf="form.controls['price'].hasError('required')">
+              Campo requerido
+            </mat-error>
+          </mat-form-field>
+          <!-- Manejo de expeciones para presentar uno u otro mensaje de error siempre y cuando el usuario haya comenzsado a escribir (dirty) o tenga error (errors) -->
+          <!-- También es posible remplazar (form.get('price')) por priceField creando en el ts el método get -->
+          <div *ngIf="priceField?.errors && priceField?.dirty">
+            <small *ngIf="priceField?.hasError('price_invalid')"
+              >Este campo no es válido</small
+            >
+            <small *ngIf="priceField?.hasError('required')"
+              >Campo requerido</small
+            >
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-label>Description</mat-label>
+            <textarea
+              formControlName="description"
+              matInput
+              placeholder="description"
+            ></textarea>
+            <mat-error
+              *ngIf="form.controls['description'].hasError('required')"
+            >
+              Campo requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="secondary" routerLink="/admin/products">Cancelar</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="form.invalid || form.untouched"
+      >
+        Submit
+      </button>
+    </mat-card-actions>
+  </mat-card>
 </form>
