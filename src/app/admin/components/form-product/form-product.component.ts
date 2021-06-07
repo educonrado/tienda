@@ -38,6 +38,7 @@ export class FormProductComponent implements OnInit {
   fecthProduct(id: any) {
     this.productService.getProduct(id).subscribe((prod) => {
       this.form.patchValue(prod);
+      // patchvalue({id:prod.id})
     });
   }
 
