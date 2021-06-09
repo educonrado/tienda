@@ -1,40 +1,51 @@
 <div class="contenedor-datos">
-    <h2>
-        Listado de productos
-    </h2>
-    <a mat-raised-button routerLink="create">Crear producto</a>
-    <table mat-table [dataSource]="products" class="mat-elevation-z8 products-table">
-        <!--Debe hacer match con los dientificadores del array displayedColumns-->
-        <ng-container matColumnDef="id">
-            <th mat-header-cell *matHeaderCellDef>ID</th>
-            <td mat-cell *matCellDef="let product"> {{product.id}} </td>
-        </ng-container>
-        <ng-container matColumnDef="image">
-            <th mat-header-cell *matHeaderCellDef>Image</th>
-            <td mat-cell *matCellDef="let product">
-                <img [src]="product.image" alt="miniatura" class="miniatura">
-            </td>
-        </ng-container>
-        <ng-container matColumnDef="title">
-            <th mat-header-cell *matHeaderCellDef>Title</th>
-            <td mat-cell *matCellDef="let product"> {{product.title}} </td>
-        </ng-container>
-        <ng-container matColumnDef="price">
-            <th mat-header-cell *matHeaderCellDef>Price</th>
-            <td mat-cell *matCellDef="let product"> {{product.price | currency}} </td>
-        </ng-container>
-        <ng-container matColumnDef="actions">
-            <th mat-header-cell *matHeaderCellDef>Actions</th>
-            <td mat-cell *matCellDef="let product">
-                <button mat-icon-button aria-label="Edit product" [routerLink]="['edit', product.id]">
-                    <mat-icon>edit</mat-icon>
-                </button>
-                <button mat-icon-button color="warn" aria-label="Delete product" (click)="deleteProduct(product.id)">
-                    <mat-icon>delete</mat-icon>
-                </button>
-            </td>
-        </ng-container>
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+  <h2>Listado de productos</h2>
+  <a mat-raised-button routerLink="create">Crear producto</a>
+  <table
+    mat-table
+    [dataSource]="products"
+    class="mat-elevation-z8 products-table"
+  >
+    <!--Debe hacer match con los dientificadores del array displayedColumns-->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>ID</th>
+      <td mat-cell *matCellDef="let product">{{ product.id }}</td>
+    </ng-container>
+    <ng-container matColumnDef="image">
+      <th mat-header-cell *matHeaderCellDef>Image</th>
+      <td mat-cell *matCellDef="let product">
+        <img [src]="product.image" alt="miniatura" class="miniatura" />
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef>Title</th>
+      <td mat-cell *matCellDef="let product">{{ product.title }}</td>
+    </ng-container>
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let product">{{ product.price | currency }}</td>
+    </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Actions</th>
+      <td mat-cell *matCellDef="let product">
+        <button
+          mat-icon-button
+          aria-label="Edit product"
+          [routerLink]="['edit', product.id]"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          color="warn"
+          aria-label="Delete product"
+          (click)="openDialog(product.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
 </div>
