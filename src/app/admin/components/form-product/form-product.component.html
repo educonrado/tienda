@@ -10,12 +10,9 @@
           <mat-form-field class="full-width" *ngIf="titulo">
             <mat-label>Id</mat-label>
             <input formControlName="id" matInput type="text" placeholder="id" />
-<<<<<<< HEAD
-=======
             <mat-error *ngIf="form.controls['id'].hasError('required')">
               Campo requerido
             </mat-error>
->>>>>>> d3ed8affe99e30e9c65390e3cd6b82b9b4178bbd
           </mat-form-field>
         </div>
       </div>
@@ -29,12 +26,6 @@
               type="text"
               placeholder="title"
             />
-<<<<<<< HEAD
-=======
-            <mat-error *ngIf="form.controls['title'].hasError('required')">
-              Campo requerido
-            </mat-error>
->>>>>>> d3ed8affe99e30e9c65390e3cd6b82b9b4178bbd
           </mat-form-field>
         </div>
       </div>
@@ -43,12 +34,6 @@
           <mat-form-field class="full-width">
             <mat-label>Price</mat-label>
             <input formControlName="price" matInput type="number" />
-<<<<<<< HEAD
-=======
-            <mat-error *ngIf="form.controls['price'].hasError('required')">
-              Campo requerido
-            </mat-error>
->>>>>>> d3ed8affe99e30e9c65390e3cd6b82b9b4178bbd
           </mat-form-field>
           <!-- Manejo de expeciones para presentar uno u otro mensaje de error siempre y cuando el usuario haya comenzsado a escribir (dirty) o tenga error (errors) -->
           <!-- También es posible remplazar (form.get('price')) por priceField creando en el ts el método get -->
@@ -71,35 +56,17 @@
               matInput
               placeholder="description"
             ></textarea>
-<<<<<<< HEAD
-=======
-            <mat-error
-              *ngIf="form.controls['description'].hasError('required')"
-            >
-              Campo requerido
-            </mat-error>
->>>>>>> d3ed8affe99e30e9c65390e3cd6b82b9b4178bbd
           </mat-form-field>
         </div>
       </div>
     </mat-card-content>
     <mat-card-actions>
-<<<<<<< HEAD
-      <button mat-raised-button color="secondary" routerLink="/admin/products">
-        Cancelar
-      </button>
-=======
       <button mat-raised-button color="secondary" routerLink="/admin/products">Cancelar</button>
->>>>>>> d3ed8affe99e30e9c65390e3cd6b82b9b4178bbd
       <button
         mat-raised-button
         color="primary"
         type="submit"
-<<<<<<< HEAD
-        [disabled]="form.invalid"
-=======
         [disabled]="form.invalid || form.untouched"
->>>>>>> d3ed8affe99e30e9c65390e3cd6b82b9b4178bbd
       >
         Submit
       </button>

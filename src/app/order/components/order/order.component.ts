@@ -25,8 +25,9 @@ export class OrderComponent implements OnInit {
     this.cartService.cart$
       .pipe(
         map((products) => {
-          products.forEach((element: Product) => {
-            console.log(element);
+          products.forEach((product: Product) => {
+            console.log(product);
+            
           });
         })
       )

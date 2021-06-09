@@ -44,11 +44,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-<<<<<<< HEAD
     MatStepperModule,
-=======
     MatDialogModule,
->>>>>>> d3ed8affe99e30e9c65390e3cd6b82b9b4178bbd
   ],
   exports: [
     MatButtonModule,
@@ -68,11 +65,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-<<<<<<< HEAD
     MatStepperModule,
-=======
     MatDialogModule,
->>>>>>> d3ed8affe99e30e9c65390e3cd6b82b9b4178bbd
   ],
 })
 export class MaterialModule {}
