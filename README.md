@@ -32,3 +32,24 @@ Modularización  -> Una sola responsabilidad
 Pipes
 Directives
 Routing         -> Children, cargar módulos
+
+# Pasos subir firebase hosting
+
+`firebase init`
+Seleccionar hosting
+Seleccionar proyecto
+Cual es nuestro repo: 
+`dist/tienda`
+Reescribir: n 
+Confirmacion: n
+
+`ng build prod`
+`firebase deploy`
+
+
+## firebase.json
+Agregar reglas para solucionar rounting de angular:
+"rewrites": [{
+    "sources": "**",
+    "destination": "/indetx.html"
+}]
