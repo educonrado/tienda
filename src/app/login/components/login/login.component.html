@@ -7,12 +7,19 @@
       <mat-card class="login-card">
         <mat-card-content>
           <mat-form-field class="full-width">
-            <mat-label><mat-icon>face</mat-icon> Usuario</mat-label>
-            <input matInput type="text" formControlName="usuario" required autocomplete="off"/>
-            <mat-error
-              *ngIf="formLogin.controls['usuario'].hasError('required')"
-            >
+            <mat-label><mat-icon>face</mat-icon> Email</mat-label>
+            <input
+              matInput
+              type="text"
+              formControlName="email"
+              required
+              autocomplete="off"
+            />
+            <mat-error *ngIf="formLogin.controls['email'].hasError('required')">
               Campo requerido
+            </mat-error>
+            <mat-error *ngIf="formLogin.controls['email'].hasError('email')">
+              Ingrese un correo válido
             </mat-error>
           </mat-form-field>
           <mat-form-field class="full-width">

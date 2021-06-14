@@ -18,15 +18,15 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field class="full-width">
-          <mat-label><mat-icon>face</mat-icon> Usuario</mat-label>
-          <input matInput type="text" required formControlName="usuario" />
+          <mat-label><mat-icon>face</mat-icon> e-mail</mat-label>
+          <input matInput type="text" required formControlName="email" />
           <mat-error
-            *ngIf="formRegistro.controls['usuario'].hasError('required')"
+            *ngIf="formRegistro.controls['email'].hasError('required')"
           >
             Campo requerido
           </mat-error>
           <mat-error
-            *ngIf="formRegistro.controls['usuario'].hasError('minlength')"
+            *ngIf="formRegistro.controls['email'].hasError('minlength')"
           >
             La loguitud del campo debe ser mayor
           </mat-error>
@@ -54,7 +54,7 @@
           aria-label="Regresar"
           routerLink="/login"
         >
-        Regresar
+          Regresar
         </button>
         <button
           mat-raised-button

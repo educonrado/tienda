@@ -35,7 +35,6 @@ const routes: Routes = [
       },
       {
         path: '',
-        canActivate: [AdminGuard],
         loadChildren: () =>
           import('./social/social.module').then((m) => m.SocialModule),
       },

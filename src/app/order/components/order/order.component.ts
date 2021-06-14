@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { groupBy, map, mergeMap, toArray } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Product } from 'src/app/core/interfaces/product.model';
 import { CartService } from 'src/app/core/services/cart.service';
 
@@ -27,7 +27,6 @@ export class OrderComponent implements OnInit {
         map((products) => {
           products.forEach((product: Product) => {
             console.log(product);
-            
           });
         })
       )
